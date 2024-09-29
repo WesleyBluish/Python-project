@@ -1,0 +1,250 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: Porter;
+	src: url("../fonts/Porter.otf");
+}
+
+@font-face {
+	font-family: HARLOWSI;
+	src: url("../fonts/HARLOWSI.TTF");
+}
+
+@font-face {
+	font-family: Uni;
+	src: url("../fonts/Uni Sans Semi.ttf");
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background: #031830; /* Darker blue for scrollbars */
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #0c5aa8; 
+}
+
+#particles-js {
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+li, a, button {
+	outline: none;
+	list-style-type: none;
+	text-decoration: none;
+	cursor: pointer;
+	border-style: none;
+}
+
+body {
+	background-color: #196f8a; /* Deep blue background */
+	height: 90vh;
+}
+
+header {
+	z-index: 5;
+	-webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.75);
+}
+
+.navbar {
+	display: block;
+	padding: 20px;
+	text-align: center;
+	color: rgba(207, 198, 198, 0.829);
+	font-size: 1.3rem;
+	background-color: #226da0; /* Mid-range blue */
+	font-family: Uni;
+	letter-spacing: 1px;
+}
+
+.addButton {
+	z-index: 10;
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+}
+
+.addButton button {
+	background-color: #020c16; /* Blue-black for button */
+	font-size: 3.2rem;
+	color: rgba(212, 206, 206, 0.863);
+	transition: 0.2s;
+}
+
+.addButton button i {
+	text-shadow: 0 1px 20px black;
+}
+
+.todoList {
+	overflow-y: auto;
+	padding: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.todo {
+	margin: 30px;
+	display: inline-flex;
+	width: 250px;
+	background-color: #224B74; /* Darker blue background for todo items */
+	color: whitesmoke;
+	font-family: Uni;
+	letter-spacing: 1px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.75);
+}
+
+.details h3 {
+	letter-spacing: 1px;
+}
+
+.details p {
+	min-height: 5rem;
+	text-align: left;
+	width: 100%;
+	background-color: #1869a7; /* Light blue background for details */
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.details {
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+}
+
+.model {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	text-align: center;
+	width: 90%;
+	height: 60vh;
+	background-color: #225885; /* Medium blue background for modal */
+	z-index: 100;
+	text-align: center;
+}
+
+.mform {
+	letter-spacing: 1px;
+	padding: 2rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.mform h3 {
+	font-family: Uni;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	color: rgba(206, 203, 203, 0.863);
+}
+
+.mform input {
+	border-radius: 5px;
+	font-size: 19px;
+	background-color: #3B5B8C; /* Darker blue for input */
+	border-style: none;
+	padding: 5px;
+	color: whitesmoke;
+	text-align: center;
+	font-family: Uni;
+	outline: none;
+}
+
+.mform textarea {
+	border-radius: 5px;
+	padding: 5px;
+	background-color: #3B5B8C; /* Same as input */
+	outline: none;
+	color: whitesmoke;
+	border-style: none;
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-family: Uni;
+	height: 100%;
+	resize: none;
+}
+
+.mform button {
+	transition: 0.2s;
+	border-radius: 5px;
+	text-align: center;
+	font-family: Uni;
+	background-color: #5C9CCC; /* Light blue for submit button */
+	color: whitesmoke;
+	font-weight: normal;
+	font-size: 1.2rem;
+	padding: 10px;
+	letter-spacing: 1.1px;
+}
+
+.mform button:hover {
+	background-color: #4187B0; /* Darker blue on hover */
+}
+
+#close {
+	position: absolute;
+	right: 2rem;
+	color: whitesmoke;
+	font-size: 1.6rem;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.overlay {
+	display: none;
+	z-index: 50;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-image: radial-gradient(50% 100%, rgba(76, 154, 255, 0.54) 0%, rgba(52, 102, 186, 0.54) 100%);
+}
+
+@media (max-width: 670px) {
+	.todo {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+
+	.mform button {
+		font-size: 1.4rem;
+	}
+
+	.mform h3 {
+		font-size: 1.4rem;
+	}
+}
+
+@media (max-width: 300px) {
+	#close {
+		display: none;
+	}
+}
